@@ -452,8 +452,8 @@ const Index = () => {
               <SectionTitle kicker="Контакты" title="Будем рады видеть вас" center />
               <div className="grid gap-4 sm:grid-cols-3">
                 {[
-                  { icon: 'MapPin', t: 'Адрес', d: 'Москва, ул. Цветочная, 12', color: 'bg-rose-50 text-rose-500' },
-                  { icon: 'Phone', t: 'Телефон', d: '+7 (495) 123-45-67', color: 'bg-blue-50 text-blue-500' },
+                  { icon: 'MapPin', t: 'Адрес', d: 'г. Орск, ул. Багратиона, 6а', color: 'bg-rose-50 text-rose-500' },
+                  { icon: 'Phone', t: 'Телефон', d: '8 (905) 899-18-17', color: 'bg-blue-50 text-blue-500' },
                   { icon: 'Clock', t: 'Часы работы', d: 'Ежедневно 9:00 — 21:00', color: 'bg-amber-50 text-amber-500' },
                 ].map((c) => (
                   <div key={c.t} className="rounded-2xl border border-border bg-white p-7 text-center shadow-sm">
@@ -509,8 +509,8 @@ const Index = () => {
             <p className="mt-3 text-sm text-background/60">Салон красоты, где о вас заботятся.</p>
           </div>
           <div className="space-y-2 text-sm text-background/70">
-            <p>Москва, ул. Цветочная, 12</p>
-            <p>+7 (495) 123-45-67</p>
+            <p>г. Орск, ул. Багратиона, 6а</p>
+            <p>8 (905) 899-18-17</p>
             <p>Ежедневно 9:00 — 21:00</p>
           </div>
           <div className="flex flex-wrap gap-2 sm:justify-end">
