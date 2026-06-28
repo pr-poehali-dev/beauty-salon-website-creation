@@ -174,7 +174,7 @@ const Index = () => {
                   {[
                     { n: '12+', l: 'лет опыта' },
                     { n: '8 000+', l: 'клиентов' },
-                    { n: '⭐ 4.9', l: 'рейтинг' },
+                    { n: '⭐ 4.8', l: 'рейтинг' },
                   ].map((s) => (
                     <div key={s.l}>
                       <p className="font-display text-2xl font-bold text-primary">{s.n}</p>
