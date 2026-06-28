@@ -84,7 +84,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
 
       {/* ─── Header ─── */}
-      <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-md">
+      <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background">
         <div className="container flex h-16 items-center justify-between md:h-20">
 
           {/* Logo */}
@@ -109,7 +109,7 @@ const Index = () => {
 
         {/* Выпадающее меню */}
         {menuOpen && (
-          <div className="absolute left-0 top-full w-full border-b border-border/60 bg-background/98 shadow-lg backdrop-blur-md">
+          <div className="absolute left-0 top-full w-full border-b border-border/60 bg-background shadow-lg">
             <div className="container py-5">
               <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-4">
                 {tabs.map((n) => (
