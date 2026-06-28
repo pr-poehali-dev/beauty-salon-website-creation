@@ -172,7 +172,7 @@ const Index = () => {
                 {/* Stats strip */}
                 <div className="mt-10 flex gap-6 border-t border-border pt-8">
                   {[
-                    { n: '12+', l: 'лет опыта' },
+                    { n: '5', l: 'лет опыта' },
                     { n: '8 000+', l: 'клиентов' },
                     { n: '⭐ 4.8', l: 'рейтинг' },
                   ].map((s) => (
@@ -253,7 +253,7 @@ const Index = () => {
                     материалы и команда, влюблённая в своё дело.
                   </p>
                   <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/20 pt-8">
-                    {[{ n: '12', l: 'лет' }, { n: '8K+', l: 'гостей' }, { n: '15', l: 'мастеров' }].map((s) => (
+                    {[{ n: '5', l: 'лет' }, { n: '8K+', l: 'гостей' }, { n: '3', l: 'мастера' }].map((s) => (
                       <div key={s.l}>
                         <p className="font-display text-3xl font-bold">{s.n}</p>
                         <p className="text-xs text-white/70">{s.l}</p>
