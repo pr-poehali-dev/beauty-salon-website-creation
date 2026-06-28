@@ -95,72 +95,46 @@ const Index = () => {
             Анюта
           </button>
 
-          {/* Desktop nav */}
-          <nav className="hidden gap-6 lg:flex xl:gap-9">
-            {tabs.map((n) => (
-              <button
-                key={n.id}
-                onClick={() => go(n.id)}
-                className={`relative text-sm transition-colors ${
-                  tab === n.id ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {n.label}
-                {tab === n.id && (
-                  <span className="absolute -bottom-1.5 left-0 h-px w-full bg-accent" />
-                )}
-              </button>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {/* Desktop CTA */}
-            <Button
-              onClick={() => go('booking')}
-              variant="outline"
-              className="hidden rounded-none border-foreground/30 text-xs tracking-[0.15em] uppercase md:flex"
-            >
-              Запись
-            </Button>
-
-            {/* Burger */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
-              aria-label="Меню"
-            >
-              <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
-              <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
-            </button>
-          </div>
+          {/* Burger — всегда виден */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-[6px]"
+            aria-label="Меню"
+          >
+            <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? 'translate-y-[8px] rotate-45' : ''}`} />
+            <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+            <span className={`block h-px w-6 bg-foreground transition-all duration-300 ${menuOpen ? '-translate-y-[8px] -rotate-45' : ''}`} />
+          </button>
         </div>
 
-        {/* Mobile fullscreen menu */}
+        {/* Выпадающее меню */}
         {menuOpen && (
-          <div className="absolute left-0 top-full w-full border-b border-border/60 bg-background/98 backdrop-blur-md lg:hidden">
-            <div className="container py-6">
-              <div className="grid grid-cols-2 gap-1">
+          <div className="absolute left-0 top-full w-full border-b border-border/60 bg-background/98 shadow-lg backdrop-blur-md">
+            <div className="container py-5">
+              <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-4">
                 {tabs.map((n) => (
                   <button
                     key={n.id}
                     onClick={() => go(n.id)}
-                    className={`flex items-center gap-3 rounded-sm px-4 py-3 text-left text-base transition-colors ${
+                    className={`flex items-center gap-2 px-4 py-3 text-left text-sm transition-colors ${
                       tab === n.id
-                        ? 'bg-secondary text-foreground'
+                        ? 'bg-secondary font-medium text-foreground'
                         : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
                     }`}
                   >
+                    {tab === n.id && <span className="h-1 w-1 rounded-full bg-accent" />}
                     {n.label}
                   </button>
                 ))}
               </div>
-              <Button
-                onClick={() => go('booking')}
-                className="mt-5 w-full rounded-none py-5 text-xs tracking-[0.2em] uppercase"
-              >
-                Записаться онлайн
-              </Button>
+              <div className="mt-4 border-t border-border/60 pt-4">
+                <Button
+                  onClick={() => go('booking')}
+                  className="w-full rounded-none py-5 text-xs tracking-[0.2em] uppercase sm:w-auto sm:px-10"
+                >
+                  Записаться онлайн
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -524,44 +498,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* ─── Mobile bottom nav ─── */}
-      <nav className="fixed bottom-0 left-0 z-40 w-full border-t border-border/60 bg-background/95 backdrop-blur-md lg:hidden">
-        <div className="flex">
-          {tabs.slice(0, 5).map((n) => (
-            <button
-              key={n.id}
-              onClick={() => go(n.id)}
-              className={`flex flex-1 flex-col items-center gap-1 py-3 text-[10px] transition-colors ${
-                tab === n.id ? 'text-foreground' : 'text-muted-foreground'
-              }`}
-            >
-              <span className={`h-px w-4 bg-accent transition-opacity ${tab === n.id ? 'opacity-100' : 'opacity-0'}`} />
-              {n.label}
-            </button>
-          ))}
-          <button
-            onClick={() => go('booking')}
-            className={`flex flex-1 flex-col items-center gap-1 py-3 text-[10px] transition-colors ${
-              tab === 'booking' ? 'text-foreground' : 'text-muted-foreground'
-            }`}
-          >
-            <span className={`h-px w-4 bg-accent transition-opacity ${tab === 'booking' ? 'opacity-100' : 'opacity-0'}`} />
-            Запись
-          </button>
-          <button
-            onClick={() => go('contacts')}
-            className={`flex flex-1 flex-col items-center gap-1 py-3 text-[10px] transition-colors ${
-              tab === 'contacts' ? 'text-foreground' : 'text-muted-foreground'
-            }`}
-          >
-            <span className={`h-px w-4 bg-accent transition-opacity ${tab === 'contacts' ? 'opacity-100' : 'opacity-0'}`} />
-            Контакты
-          </button>
-        </div>
-      </nav>
 
-      {/* Spacer for mobile bottom nav */}
-      <div className="h-14 lg:hidden" />
     </div>
   );
 };
