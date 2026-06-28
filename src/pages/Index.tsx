@@ -140,7 +140,7 @@ const Index = () => {
             <div className="container relative grid items-center gap-10 py-12 md:grid-cols-2 md:gap-16 md:py-20">
               <div className="reveal order-2 md:order-1">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold text-primary">
-                  <Icon name="Sparkles" size={13} /> Салон красоты в Москве
+                  <Icon name="Sparkles" size={13} /> Салон красоты в Орске
                 </span>
                 <h1 className="mt-5 font-display text-5xl font-bold leading-tight sm:text-6xl md:text-7xl">
                   Красота,{' '}
